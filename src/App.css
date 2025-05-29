@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --primary: #00A7FF;
+  --primary-light: #93C5FD;
+  --primary-dark: #00A7FF;
+  --secondary: #00A7FF;
+  --secondary-light: #C4B5FD;
+  --accent: #00A7FF;
+  --accent-light: #FDBA74;
+  --success: #00A7FF;
+  --warning: #00A7FF;
+  --error: #EF4444;
+  --background: #F8FAFC;
+  --foreground: #0F172A;
+  --card: #FFFFFF;
+  --card-foreground: #00A7FF;
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --ring: #00A7FF;
+  --radius: 1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 700;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  font-family: 'Exo 2', sans-serif;
+  cursor: pointer;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.primary-button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 167, 255, 0.2),
+    0 2px 4px -1px rgba(0, 167, 255, 0.1);
+}
+
+.primary-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 167, 255, 0.2),
+    0 4px 6px -2px rgba(0, 167, 255, 0.1);
+}
+
+.secondary-button {
+  background-color: var(--secondary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+  box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.2),
+    0 2px 4px -1px rgba(139, 92, 246, 0.1);
+}
+
+.secondary-button:hover {
+  background-color: #7c3aed;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.2),
+    0 4px 6px -2px rgba(139, 92, 246, 0.1);
+}
+
+.card {
+  background-color: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 150px;
+  background-color: var(--foreground);
+  color: white;
+  text-align: center;
+  border-radius: 0.5rem;
+  padding: 0.55rem;
+  position: absolute;
+  z-index: 99999;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.675rem;
+  line-height: 1.4;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.robot-part {
+  cursor: grab;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 120px;
+}
+
+.robot-part:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.robot-part:active {
+  cursor: grabbing;
+}
+
+
+
+.parts-container {
+  max-height: 90vh;
+  overflow-y: auto;
+  padding-right: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--background);
+}
+
+.parts-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.parts-container::-webkit-scrollbar-track {
+  background: var(--background);
+  border-radius: 4px;
+}
+
+.parts-container::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 4px;
+}
+
+.complete-button {
+  position: sticky;
+  bottom: 1rem;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--success);
+  color: white;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  margin-top: 1rem;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.complete-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(16, 185, 129, 0.2);
+}
+
+.complete-button:disabled {
+  background-color: var(--border);
+  cursor: not-allowed;
+}
+
+.part-incompatible {
+  opacity: 0.5;
+  border-color: var(--error) !important;
+}
+
+.part-incompatible .part-status {
+  color: var(--error);
+}
+
+.part-optimal {
+  border-color: var(--success) !important;
+}
+
+.part-optimal .part-status {
+  color: var(--success);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 1rem;
+  }
+
+  .primary-button,
+  .secondary-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+
+  .parts-container {
+    max-height: 60vh;
+  }
+}

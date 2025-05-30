@@ -1,4 +1,28 @@
 import { RobotPart } from '../types';
+import homeHead from "../components/robo-parts/home-helper-head.png";
+import headEdu from "../components/robo-parts/education-head.png";
+import headGarden from "../components/robo-parts/garden-head.png";
+import entEdu from "../components/robo-parts/entertainment-head.png";
+import eyesGarden from "../components/robo-parts/garden-eyes.png";
+import eyesHome from "../components/robo-parts/home-helper-eyes.png";
+import EYESeDU from "../components/robo-parts/education-eyes.png";
+import eyesEnt from "../components/robo-parts/entertainment-eyes.png";
+import armHome from "../components/robo-parts/home-helper-arms.png";
+import petArm from "../components/robo-parts/pet-companion-arms.png";
+import gardArm from "../components/robo-parts/garden-arms.png";
+import eduArm from "../components/robo-parts/education-arms.png.png";
+import entArm from "../components/robo-parts/entertainment-arms.png";
+import homeBody from "../components/robo-parts/home-helper-body.png";
+import entBody from "../components/robo-parts/entertainment-body.png";
+import eduBody from "../components/robo-parts/education-body.png.png";
+import petBody from "../components/robo-parts/pet-companion-body.png";
+import gardbody from "../components/robo-parts/garden-body.png";
+import homeLegs from "../components/robo-parts/home-helper-legs.png";
+import gardLegs from "../components/robo-parts/garden-legs.png";
+import eduLegs from "../components/robo-parts/education-legs.png.png";
+import entLegs from "../components/robo-parts/entertainment-legs.png";
+import toy from "../components/robo-parts/pet-companion-attachment.png";
+import brash from "../components/robo-parts/home-helper-attachment.png";
 
 export const parts: RobotPart[] = [
   // Heads
@@ -14,8 +38,7 @@ export const parts: RobotPart[] = [
       'education',
       'entertainment',
     ],
-    imageUrl:
-      'https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg?auto=compress&cs=tinysrgb&w=600',
+    imageUrl: homeHead ,
   },
   {
     id: 'smart-display',
@@ -25,8 +48,7 @@ export const parts: RobotPart[] = [
     function:
       'Показывает информацию, образовательный контент или выразительные лица',
     compatibleMissions: ['home-helper', 'education', 'entertainment'],
-    imageUrl:
-      'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600',
+    imageUrl: headEdu,
   },
   {
     id: 'weather-head',
@@ -37,7 +59,7 @@ export const parts: RobotPart[] = [
     function: 'Защищает внутренние компоненты от погодных условий',
     compatibleMissions: ['garden', 'pet-companion'],
     imageUrl:
-      'https://images.pexels.com/photos/8566454/pexels-photo-8566454.jpeg?auto=compress&cs=tinysrgb&w=600',
+    headGarden,
   },
   {
     id: 'expressive-head',
@@ -47,7 +69,7 @@ export const parts: RobotPart[] = [
     function: 'Отображает широкий спектр эмоций и выражений',
     compatibleMissions: ['entertainment', 'education', 'pet-companion'],
     imageUrl:
-      'https://images.pexels.com/photos/8566464/pexels-photo-8566464.jpeg?auto=compress&cs=tinysrgb&w=600',
+      entEdu,
   },
 
   // Eyes
@@ -59,7 +81,7 @@ export const parts: RobotPart[] = [
     function: 'Захватывает визуальную информацию с высокой точностью',
     compatibleMissions: ['home-helper', 'pet-companion', 'garden'],
     imageUrl:
-      'https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg?auto=compress&cs=tinysrgb&w=600',
+    eyesHome,
   },
   {
     id: 'digital-eyes',
@@ -71,7 +93,7 @@ export const parts: RobotPart[] = [
       'Отображает широкий спектр выражений и может отображать информацию',
     compatibleMissions: ['education', 'entertainment', 'home-helper'],
     imageUrl:
-      'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=600',
+    EYESeDU ,
   },
   {
     id: 'sensor-eyes',
@@ -82,7 +104,7 @@ export const parts: RobotPart[] = [
       'Определяет температуру, влажность, уровень освещенности и многое другое',
     compatibleMissions: ['garden', 'home-helper'],
     imageUrl:
-      'https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=600',
+    eyesGarden,
   },
   {
     id: 'led-eyes',
@@ -92,7 +114,7 @@ export const parts: RobotPart[] = [
     function: 'Создает динамичные, красочные паттерны и выражения',
     compatibleMissions: ['entertainment', 'pet-companion'],
     imageUrl:
-      'https://images.pexels.com/photos/1314544/pexels-photo-1314544.jpeg?auto=compress&cs=tinysrgb&w=600',
+    eyesEnt,
   },
 
   // Arms
@@ -105,7 +127,7 @@ export const parts: RobotPart[] = [
     function: 'Выполняет широкий спектр домашних задач',
     compatibleMissions: ['home-helper'],
     imageUrl:
-      'https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=600',
+    armHome,
   },
   {
     id: 'gentle-arms',
@@ -117,7 +139,7 @@ export const parts: RobotPart[] = [
       'Безопасно взаимодействует с домашними животными и хрупкими предметами',
     compatibleMissions: ['pet-companion', 'home-helper'],
     imageUrl:
-      'https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&w=600',
+    petArm,
   },
   {
     id: 'gardening-arms',
@@ -127,7 +149,7 @@ export const parts: RobotPart[] = [
     function: 'Выполняет различные садовые работы с точностью',
     compatibleMissions: ['garden'],
     imageUrl:
-      'https://images.pexels.com/photos/7655888/pexels-photo-7655888.jpeg?auto=compress&cs=tinysrgb&w=600',
+    gardArm,
   },
   {
     id: 'teaching-arms',
@@ -139,7 +161,7 @@ export const parts: RobotPart[] = [
       'Показывает, как выполнять задачи, и создает образовательные модели',
     compatibleMissions: ['education'],
     imageUrl:
-      'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600',
+    eduArm,
   },
   {
     id: 'dancing-arms',
@@ -150,7 +172,7 @@ export const parts: RobotPart[] = [
     function: 'Исполняет танцы и развлекательные движения',
     compatibleMissions: ['entertainment'],
     imageUrl:
-      'https://images.pexels.com/photos/8566526/pexels-photo-8566526.jpeg?auto=compress&cs=tinysrgb&w=600',
+    entArm,
   },
 
   // Bodies
@@ -162,7 +184,7 @@ export const parts: RobotPart[] = [
     function: 'Хранит инструменты и принадлежности для различных задач',
     compatibleMissions: ['home-helper', 'garden'],
     imageUrl:
-      'https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=600',
+    homeBody,
   },
   {
     id: 'compact-body',
@@ -172,7 +194,8 @@ export const parts: RobotPart[] = [
     function: 'Быстро перемещается и перемещается в ограниченном пространстве',
     compatibleMissions: ['pet-companion', 'entertainment'],
     imageUrl:
-      'https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&w=600',
+    petBody
+    ,
   },
   {
     id: 'learning-body',
@@ -183,7 +206,7 @@ export const parts: RobotPart[] = [
     function: 'Обеспечивает интерактивное обучение',
     compatibleMissions: ['education'],
     imageUrl:
-      'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600',
+      eduBody,
   },
   {
     id: 'speaker-body',
@@ -193,7 +216,7 @@ export const parts: RobotPart[] = [
     function: 'Воспроизводит музыку и звуковые эффекты для развлечения',
     compatibleMissions: ['entertainment', 'education'],
     imageUrl:
-      'https://images.pexels.com/photos/8566526/pexels-photo-8566526.jpeg?auto=compress&cs=tinysrgb&w=600',
+    entBody,
   },
   {
     id: 'rugged-body',
@@ -204,7 +227,7 @@ export const parts: RobotPart[] = [
     function: 'Выдерживает грязь, воду и сложные условия',
     compatibleMissions: ['garden'],
     imageUrl:
-      'https://images.pexels.com/photos/9030230/pexels-photo-9030230.jpeg?auto=compress&cs=tinysrgb&w=600',
+      gardbody,
   },
 
   // Legs/Mobility
@@ -216,7 +239,7 @@ export const parts: RobotPart[] = [
     function: 'Быстро перемещается по ровным, внутренним поверхностям',
     compatibleMissions: ['home-helper', 'pet-companion', 'education'],
     imageUrl:
-      'https://images.pexels.com/photos/3779151/pexels-photo-3779151.jpeg?auto=compress&cs=tinysrgb&w=600',
+      homeLegs,
   },
   {
     id: 'all-terrain-legs',
@@ -228,7 +251,7 @@ export const parts: RobotPart[] = [
       'Передвигается по пересеченной местности, траве и садовым участкам',
     compatibleMissions: ['garden'],
     imageUrl:
-      'https://images.pexels.com/photos/7655888/pexels-photo-7655888.jpeg?auto=compress&cs=tinysrgb&w=600',
+      gardLegs,
   },
   {
     id: 'static-base',
@@ -238,7 +261,7 @@ export const parts: RobotPart[] = [
     function: 'Обеспечивает устойчивость для образовательных демонстраций',
     compatibleMissions: ['education'],
     imageUrl:
-      'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600',
+      eduLegs,
   },
   {
     id: 'bouncy-legs',
@@ -248,7 +271,7 @@ export const parts: RobotPart[] = [
     function: 'Выполняет прыжки и танцевальные движения для развлечения',
     compatibleMissions: ['entertainment'],
     imageUrl:
-      'https://images.pexels.com/photos/8566526/pexels-photo-8566526.jpeg?auto=compress&cs=tinysrgb&w=600',
+      entLegs,
   },
 
   // Special Attachments
@@ -260,7 +283,7 @@ export const parts: RobotPart[] = [
     function: 'Эффективно очищает полы и поверхности',
     compatibleMissions: ['home-helper'],
     imageUrl:
-      'https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=600',
+      brash,
   },
   {
     id: 'toy-attachment',
@@ -270,7 +293,7 @@ export const parts: RobotPart[] = [
     function: 'Вовлекает питомцев в игровые действия',
     compatibleMissions: ['pet-companion'],
     imageUrl:
-      'https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&w=600',
+      toy,
   },
   {
     id: 'projector-attachment',

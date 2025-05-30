@@ -105,7 +105,7 @@ const RobotPassport: React.FC = () => {
             <div className="bg-white rounded-lg p-4 shadow-md">
               {robot.parts.body && (
                 <img
-                  src={robot.parts.body.imageUrl}
+                  src={robot.mission.imageUrl}
                   alt="Корпус робота"
                   className="w-32 h-32 object-cover rounded"
                 />

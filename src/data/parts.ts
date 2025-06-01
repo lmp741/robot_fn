@@ -235,8 +235,6 @@ export const parts: RobotPart[] = [
   },
 
   // Colors
-  
-    const colorSchemes = [
   {
     id: 'blue-scheme',
     name: 'Синий',

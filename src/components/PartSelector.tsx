@@ -59,17 +59,7 @@ const PartSelector: React.FC<PartSelectorProps> = ({ category, missionId }) => {
                     )}
                   </h5>
 
-                  <div className="flex items-center mt-2">
-                    <span
-                      className={`text-sm px-3 py-1 rounded-full ${
-                        isOptimal
-                          ? 'bg-[#00A7FF] bg-opacity-10 text-[#00A7FF]'
-                          : 'bg-gray-100 text-gray-600'
-                      }`}
-                    >
-                      {isOptimal ? '___' : '___'}
-                    </span>
-                  </div>
+                 
 
                   <div className="mt-2 text-sm text-gray-600">
                     <div className="flex items-center">

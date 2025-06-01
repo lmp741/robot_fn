@@ -245,7 +245,7 @@ export const parts: RobotPart[] = [
     description: 'Синяя схема',
     function: 'Создает надежный вид',
     compatibleMissions: ['home-helper', 'education'],
-    imageUrl: 'linear-gradient(to right, #2980B9, #6DD5FA)', // Синий градиент
+    imageUrl: blue, // Синий градиент
   },
   {
     id: 'green-scheme',
@@ -254,7 +254,7 @@ export const parts: RobotPart[] = [
     description: 'Зеленая схема',
     function: 'Природный вид',
     compatibleMissions: ['garden', 'pet-companion'],
-    imageUrl: 'linear-gradient(to right, #2ECC71, #90EE90)', // Зеленый градиент
+    imageUrl: green, // Зеленый градиент
   },
   {
     id: 'purple-scheme',
@@ -263,7 +263,7 @@ export const parts: RobotPart[] = [
     description: 'Фиолетовая схема',
     function: 'Креативный вид',
     compatibleMissions: ['education', 'entertainment'],
-    imageUrl: 'linear-gradient(to right, #8E44AD, #D4AC0D)', // Фиолетовый градиент
+    imageUrl: ppl', // Фиолетовый градиент
   },
   {
     id: 'rainbow-scheme',
@@ -272,6 +272,6 @@ export const parts: RobotPart[] = [
     description: 'Разноцветная схема',
     function: 'Веселый вид',
     compatibleMissions: ['entertainment', 'pet-companion', 'education'],
-    imageUrl: 'linear-gradient(to right, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #8B00FF)', // Радужный градиент
+    imageUrl: rb, // Радужный градиент
   },
 ];

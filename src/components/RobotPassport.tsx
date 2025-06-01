@@ -5,7 +5,7 @@ import eduVid from './videos/eduvid.mp4';
 import gardVid from './videos/gardVid.mp4';
 import partyVid from './videos/partyVid.mp4';
 import petVid from './videos/petVid.mp4';
-import houseVid from './videos/houseVid.mp4';
+import houseVid from './videos/houseVid.webm';
 
 const RobotPassport: React.FC = () => {
   const { robot, score, timeRemaining, resetGame } = useGame();

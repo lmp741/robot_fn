@@ -26,7 +26,7 @@ export const missions: Mission[] = [
     ],
     imageUrl: homeFullRobot,
   },*/
-  {
+  
     id: 'pet-companion',
     name: 'Компаньон для Питомцев',
     description: 'Робот для ухода за домашними животными',

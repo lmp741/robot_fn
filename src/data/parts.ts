@@ -263,7 +263,7 @@ export const parts: RobotPart[] = [
     description: 'Фиолетовая схема',
     function: 'Креативный вид',
     compatibleMissions: ['education', 'entertainment'],
-    imageUrl: ppl', // Фиолетовый градиент
+    imageUrl: ppl, // Фиолетовый градиент
   },
   {
     id: 'rainbow-scheme',

@@ -21,6 +21,7 @@ interface GameContextType {
   calculateScore: () => number;
   teamName: string;
   setTeamName: (name: string) => void;
+  resetGame: () => void;
 }
 
 const initialSelectedParts: Record<string, RobotPart | null> = {
@@ -29,7 +30,6 @@ const initialSelectedParts: Record<string, RobotPart | null> = {
   arms: null,
   body: null,
   legs: null,
-  attachment: null,
   color: null
 };
 
@@ -40,30 +40,25 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [selectedMission, setSelectedMission] = useState<Mission | null>(null);
   const [availableParts, setAvailableParts] = useState<RobotPart[]>([]);
   const [selectedParts, setSelectedParts] = useState<Record<string, RobotPart | null>>(initialSelectedParts);
-  const [timeRemaining, setTimeRemaining] = useState<number>(15 * 60); // 15 minutes in seconds
+  const [timeRemaining, setTimeRemaining] = useState<number>(15 * 60);
   const [isTimerRunning, setIsTimerRunning] = useState<boolean>(false);
   const [robot, setRobot] = useState<Robot | null>(null);
   const [score, setScore] = useState<number>(0);
   const [teamName, setTeamName] = useState<string>('');
 
-  // Initialize available parts
   useEffect(() => {
-    setAvailableParts(parts);
+    setAvailableParts(parts.filter(part => part.category !== 'attachment'));
   }, []);
 
-  // Timer functionality
   useEffect(() => {
     let timer: NodeJS.Timeout;
-    
     if (isTimerRunning && timeRemaining > 0) {
       timer = setInterval(() => {
         setTimeRemaining(prev => prev - 1);
       }, 1000);
     } else if (timeRemaining === 0) {
       setIsTimerRunning(false);
-      // Time's up logic
     }
-    
     return () => {
       if (timer) clearInterval(timer);
     };
@@ -74,6 +69,16 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const resetTimer = () => {
     setIsTimerRunning(false);
     setTimeRemaining(15 * 60);
+  };
+
+  const resetGame = () => {
+    setCurrentStage('start');
+    setSelectedMission(null);
+    setSelectedParts(initialSelectedParts);
+    resetTimer();
+    setRobot(null);
+    setScore(0);
+    setTeamName('');
   };
 
   const selectMission = (mission: Mission) => {
@@ -107,23 +112,18 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
     let baseScore = 0;
     let bonusScore = 0;
     
-    // Check if all required parts are selected
     const allPartsSelected = Object.values(selectedParts).every(part => part !== null);
     if (allPartsSelected) baseScore += 50;
     
-    // Check if parts are compatible with mission
-    Object.entries(selectedParts).forEach(([category, part]) => {
+    Object.entries(selectedParts).forEach(([_, part]) => {
       if (part && part.compatibleMissions.includes(selectedMission.id)) {
         baseScore += 10;
-        
-        // Bonus for optimal parts
         if (selectedMission.optimalParts.includes(part.id)) {
           bonusScore += 15;
         }
       }
     });
     
-    // Time bonus (more time left = higher bonus)
     const timeBonus = Math.floor(timeRemaining / 60) * 5;
     
     return baseScore + bonusScore + timeBonus;
@@ -149,7 +149,8 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
         score,
         calculateScore,
         teamName,
-        setTeamName
+        setTeamName,
+        resetGame
       }}
     >
       {children}

@@ -22,7 +22,6 @@ const RobotBuilder: React.FC = () => {
     { id: 'arms', name: 'Руки' },
     { id: 'body', name: 'Корпус' },
     { id: 'legs', name: 'Ноги' },
-    { id: 'attachment', name: 'Модули' },
     { id: 'color', name: 'Цвет' },
   ];
 
@@ -37,13 +36,6 @@ const RobotBuilder: React.FC = () => {
   );
 
   if (!selectedMission) return <div>Миссия не выбрана</div>;
-
-  // Calculate optimal parts ratio
-  const selectedOptimalParts = Object.values(selectedParts).filter(
-    (part) => part && selectedMission.optimalParts.includes(part.id)
-  ).length;
-  const totalOptimalParts = selectedMission.optimalParts.length;
-  const progressPercentage = (selectedOptimalParts / totalOptimalParts) * 100;
 
   return (
     <div className="max-w-7xl mx-auto p-4 py-8 flex flex-col md:flex-row gap-6">
@@ -72,26 +64,11 @@ const RobotBuilder: React.FC = () => {
             ))}
           </div>
 
-          <div className="parts-container">
+          <div className="parts-container h-[calc(100vh-400px)] overflow-y-auto">
             <PartSelector
               category={activeCategory}
               missionId={selectedMission.id}
             />
-          </div>
-
-          <div className="mt-4 p-4 bg-gray-50 rounded-lg">
-            <div className="flex justify-between items-center mb-2">
-              <span className="text-sm font-medium">Прогресс сборки:</span>
-              <span className="text-sm font-medium">
-                {selectedOptimalParts}/{totalOptimalParts}
-              </span>
-            </div>
-            <div className="progress-bar">
-              <div
-                className="progress-bar-fill"
-                style={{ width: `${progressPercentage}%` }}
-              />
-            </div>
           </div>
         </div>
 
@@ -102,8 +79,8 @@ const RobotBuilder: React.FC = () => {
         />
       </div>
 
-      <div className="md:w-2/3 space-y-7">
-        <div className="card ">
+      <div className="md:w-2/3">
+        <div className="card">
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-xl font-bold">
               Сборка: {selectedMission.name}
@@ -123,17 +100,14 @@ const RobotBuilder: React.FC = () => {
 
           {!isRobotComplete && (
             <p className="text-warning text-center mt-4">
-              Выберите детали для всех категорий, чтобы завершить сборку робота!
+              Выберите все детали для завершения сборки!
             </p>
           )}
 
           {timeRemaining === 0 && (
             <div className="bg-error bg-opacity-10 border border-error text-error p-4 rounded-md mt-4">
               <p className="font-bold">Время вышло!</p>
-              <p>
-                Вы всё ещё можете завершить сборку робота, но не получите бонус
-                за время.
-              </p>
+              <p>Завершите сборку робота.</p>
             </div>
           )}
         </div>

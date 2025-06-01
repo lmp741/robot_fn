@@ -7,7 +7,7 @@ import partyBot from './partyBot.png';
 
 export const missions: Mission[] = [
   {
-    id: 'home-helper',
+   /* id: 'home-helper',
     name: 'Домашний Помощник',
     description: 'Робот для помощи с домашними делами',
     requirements: [
@@ -24,7 +24,7 @@ export const missions: Mission[] = [
       'vacuum-attachment',
       'blue-scheme',
     ],
-    imageUrl: homeFullRobot,
+    imageUrl: homeFullRobot,*/
   },
   {
     id: 'pet-companion',

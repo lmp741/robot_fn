@@ -27,7 +27,7 @@ const PartSelector: React.FC<PartSelectorProps> = ({ category, missionId }) => {
         Варианты {getCategoryName(category)}:
       </h4>
 
-      <div className="grid grid-cols-1 gap-3">
+      <div className="grid grid-cols-1 gap-4">
         {categoryParts.map((part) => {
           const isSelected = selectedParts[category]?.id === part.id;
           const isOptimal = part.compatibleMissions.includes(missionId);
@@ -37,48 +37,47 @@ const PartSelector: React.FC<PartSelectorProps> = ({ category, missionId }) => {
               key={part.id}
               onClick={() => handleSelectPart(part.id)}
               className={`
-                p-3  rounded-md transition-all cursor-pointer
-                ${isSelected ? ' bg-[#00A7FF] bg-opacity-10' : ''}
+                p-4 border-2 rounded-lg transition-all cursor-pointer hover:shadow-lg
+                ${isSelected ? 'border-[#00A7FF] bg-[#00A7FF] bg-opacity-5' : 'border-transparent'}
                 ${isOptimal ? 'part-optimal' : 'hover:border-[#00A7FF]'}
               `}
             >
               <div className="flex items-center">
-                <div className="flex-shrink-0 w-12 h-12 bg-gray-200 rounded-md overflow-hidden mr-3">
+                <div className="flex-shrink-0 w-24 h-24 bg-white rounded-lg overflow-hidden mr-4 shadow-md">
                   <img
                     src={part.imageUrl}
                     alt={part.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain p-2"
                   />
                 </div>
 
                 <div className="flex-grow">
-                  <h5 className="font-medium text-foreground">
+                  <h5 className="font-medium text-lg">
                     {part.name}
                     {isSelected && (
                       <span className="ml-2 text-[#00A7FF]">✓</span>
                     )}
                   </h5>
 
-                  <div className="flex items-center mt-1">
+                  <div className="flex items-center mt-2">
                     <span
-                      className={`text-xs px-2 py-0.5 rounded-full ${
+                      className={`text-sm px-3 py-1 rounded-full ${
                         isOptimal
-                          ? 'bg-success bg-opacity-10 text-success'
+                          ? 'bg-[#00A7FF] bg-opacity-10 text-[#00A7FF]'
                           : 'bg-gray-100 text-gray-600'
                       }`}
                     >
                       {isOptimal ? 'Оптимальный выбор' : 'Базовый выбор'}
                     </span>
                   </div>
-                </div>
-              </div>
 
-              <div className="tooltip mt-2 text-sm text-gray-600">
-                <div className="flex items-center">
-                  <Info size={10} className="mr-1" />
-                  <span>Функция детали</span>
+                  <div className="mt-2 text-sm text-gray-600">
+                    <div className="flex items-center">
+                      <Info size={14} className="mr-1" />
+                      <span>{part.function}</span>
+                    </div>
+                  </div>
                 </div>
-                <span className="tooltip-text">{part.function}</span>
               </div>
             </div>
           );
@@ -100,8 +99,6 @@ function getCategoryName(category: string): string {
       return 'корпуса';
     case 'legs':
       return 'ног';
-    case 'attachment':
-      return 'модулей';
     case 'color':
       return 'цвета';
     default:

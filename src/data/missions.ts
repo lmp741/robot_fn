@@ -24,8 +24,8 @@ export const missions: Mission[] = [
       'vacuum-attachment',
       'blue-scheme',
     ],
-    imageUrl: homeFullRobot,*/
-  },
+    imageUrl: homeFullRobot,
+  },*/
   {
     id: 'pet-companion',
     name: 'Компаньон для Питомцев',

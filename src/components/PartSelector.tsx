@@ -37,7 +37,7 @@ const PartSelector: React.FC<PartSelectorProps> = ({ category, missionId }) => {
               key={part.id}
               onClick={() => handleSelectPart(part.id)}
               className={`
-                p-4 border-2 rounded-lg transition-all cursor-pointer hover:shadow-lg
+                p-4 rounded-lg transition-all cursor-pointer hover:shadow-lg
                 ${isSelected ? 'border-[#00A7FF] bg-[#00A7FF] bg-opacity-5' : 'border-transparent'}
                 ${isOptimal ? 'part-optimal' : 'hover:border-[#00A7FF]'}
               `}

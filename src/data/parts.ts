@@ -236,13 +236,15 @@ export const parts: RobotPart[] = [
 
   // Colors
   {
+    const colorSchemes = [
+  {
     id: 'blue-scheme',
     name: 'Синий',
     category: 'color',
     description: 'Синяя схема',
     function: 'Создает надежный вид',
     compatibleMissions: ['home-helper', 'education'],
-    imageUrl: 'https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=600',
+    imageUrl: 'linear-gradient(to right, #2980B9, #6DD5FA)', // Синий градиент
   },
   {
     id: 'green-scheme',
@@ -251,7 +253,7 @@ export const parts: RobotPart[] = [
     description: 'Зеленая схема',
     function: 'Природный вид',
     compatibleMissions: ['garden', 'pet-companion'],
-    imageUrl: 'https://images.pexels.com/photos/9030230/pexels-photo-9030230.jpeg?auto=compress&cs=tinysrgb&w=600',
+    imageUrl: 'linear-gradient(to right, #2ECC71, #90EE90)', // Зеленый градиент
   },
   {
     id: 'purple-scheme',
@@ -260,7 +262,7 @@ export const parts: RobotPart[] = [
     description: 'Фиолетовая схема',
     function: 'Креативный вид',
     compatibleMissions: ['education', 'entertainment'],
-    imageUrl: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600',
+    imageUrl: 'linear-gradient(to right, #8E44AD, #D4AC0D)', // Фиолетовый градиент
   },
   {
     id: 'rainbow-scheme',
@@ -269,6 +271,6 @@ export const parts: RobotPart[] = [
     description: 'Разноцветная схема',
     function: 'Веселый вид',
     compatibleMissions: ['entertainment', 'pet-companion', 'education'],
-    imageUrl: 'https://images.pexels.com/photos/8566526/pexels-photo-8566526.jpeg?auto=compress&cs=tinysrgb&w=600',
+    imageUrl: 'linear-gradient(to right, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #8B00FF)', // Радужный градиент
   },
 ];

@@ -24,7 +24,10 @@ import entLegs from "../components/robo-parts/entertainment-legs.png";
 import petHead from "../components/robo-parts/pet-companion-head.png";
 import petEyes from "../components/robo-parts/pet-companion-eyes.png";
 import petLegs from "../components/robo-parts/pet-companion-legs.png";
-
+import rb from "../components/robo-parts/rb.png";
+import ppl from "../components/robo-parts/ppl.png";
+import green from "../components/robo-parts/green.png";
+import blue from "../components/robo-parts/blue.png";
 export const parts: RobotPart[] = [
   // Heads
   {

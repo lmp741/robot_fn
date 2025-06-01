@@ -67,7 +67,7 @@ const PartSelector: React.FC<PartSelectorProps> = ({ category, missionId }) => {
                           : 'bg-gray-100 text-gray-600'
                       }`}
                     >
-                      {isOptimal ? 'Оптимальный выбор' : 'Базовый выбор'}
+                      {isOptimal ? '' : ' '}
                     </span>
                   </div>
 
